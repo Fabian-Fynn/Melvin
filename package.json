@@ -1,0 +1,19 @@
+{
+  "name": "melvin",
+  "version": "1.0.0",
+  "description": "Experimental AI in node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fabian-Fynn/Melvin.git"
+  },
+  "author": "Fabian Hoffmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fabian-Fynn/Melvin/issues"
+  },
+  "homepage": "https://github.com/Fabian-Fynn/Melvin#readme"
+}
