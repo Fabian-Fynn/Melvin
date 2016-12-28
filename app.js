@@ -1,20 +1,19 @@
-var express = require('express');
-var app = express();
-var http = require('http').Server(app);
-var path = require('path');
-var io = require('socket.io')(http);
+const express = require('express');
+const app = express();
+const http = require('http').Server(app);
+const path = require('path');
+const io = require('socket.io')(http);
+const Melvin = require('./melvin.js');
 
 app.use(express.static('public'));
 app.get('/', function(req, res) {
-  console.log('req');
   res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 io.on('connection', function(socket){
-    console.log('a user connected');
+    const melvin = new Melvin({socket});
     socket.on('message', function(msg) {
-      console.log('Message: ', msg);
-      socket.emit('response', 'Hi there');
+      melvin.receiveQuestion(msg);
     });
 });
 
